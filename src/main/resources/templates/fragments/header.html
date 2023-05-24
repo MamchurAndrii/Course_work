@@ -1,0 +1,46 @@
+<div th:fragment="header" class="navbar-default sidebar" role="navigation" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+        <ul class="nav" id="side-menu">
+            <li style="padding: 10px 0 0;">
+                <a th:href="@{/index}" class="waves-effect">
+                    <i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>
+                    <span class="hide-menu">
+                        Панель приладів
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/user}" class="waves-effect">
+                    <i class="fa fa-user fa-fw" aria-hidden="true"></i>
+                    <span class="hide-menu">
+                        Працівники
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/role}" class="waves-effect">
+                    <i class="fa fa-modx fa-fw" aria-hidden="true"></i>
+                    <span class="hide-menu">
+                     Роль
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/project}" class="waves-effect">
+                    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>
+                    <span class="hide-menu">
+                    Демонструвати
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/task}" class="waves-effect">
+                    <i class="fa fa-table fa-fw" aria-hidden="true">
+                    </i><span class="hide-menu">
+                       Робота
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

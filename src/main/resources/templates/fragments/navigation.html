@@ -1,0 +1,50 @@
+<div th:fragment="navigation" xmlns:th="http://www.w3.org/1999/xhtml">
+    <nav class="navbar navbar-default navbar-static-top m-b-0">
+        <div class="navbar-header">
+            <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse"
+                data-target=".navbar-collapse">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div class="top-left-part">
+                <a class="logo" th:href="@{/index}">
+                    <b>
+                        <img src="/plugins/images/logo.png" alt="home" sizes="16x16" />
+                    </b>
+
+                </a>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right pull-right">
+                <li>
+                    <div class="dropdown">
+                        <a class="profile-pic dropdown-toggle" data-toggle="dropdown" href="#">
+                            <img th:src="@{${'/plugins/images/users/'+account.image}}" alt="user-img" width="36"
+                                class="img-circle" />
+                            <strong th:text="${account.name}" class="hidden-xs">
+                                Ім'я
+                            </strong>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a th:href="@{/profile}">
+                                    Персональна інформація
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/job}">
+                                    Статистика роботи
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a th:href="@{/logout}">
+                                    Вийти
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>

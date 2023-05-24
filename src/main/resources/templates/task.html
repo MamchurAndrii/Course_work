@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Курсова робота">
+    <meta name="author" content="Мамчур Андрій Олегович">
+    <link href="./plugins/images/logo.png" rel="icon" type="image/png" sizes="16x16">
+    <title>
+        Завдання | Проект CRM
+    </title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/jquery.dataTables.min.css" rel="stylesheet">
+    <!-- Animation CSS -->
+    <link href="/css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/css/style.css" rel="stylesheet">
+    <!-- Color CSS -->
+    <link href="/css/colors/megna-dark.css" rel="stylesheet" id="theme">
+    <link href="/css/custom.css" rel="stylesheet">
+    <!-- Hide button search -->
+    <style>
+        #search {
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+    <div th:replace="fragments/preloader :: preloader"></div>
+    <div id="wrapper">
+        <div th:replace="fragments/navigation :: navigation"></div>
+        <div th:replace="fragments/header :: header"></div>
+        <!-- Page content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">
+                            Список робіт
+                        </h4>
+                    </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12 text-right">
+                        <a th:href="@{/task/add}" class="btn btn-sm btn-success">
+                            Додати новий
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <div class="table-responsive">
+                                <table class="table" id="example">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                STT
+                                            </th>
+                                            <th>
+                                                Робота
+                                            </th>
+                                            <th>
+                                                Опишіть
+                                            </th>
+                                            <th>
+                                                Демонструвати
+                                            </th>
+                                            <th>
+                                                Виконавець
+                                            </th>
+                                            <th>
+                                                День початку
+                                            </th>
+                                            <th>
+                                                Дата закінчення
+                                            </th>
+                                            <th>
+                                                Статус
+                                            </th>
+                                            <th>
+                                                Діяти
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="task,i : ${tasks}">
+                                            <td th:text="${i.index+1}">
+
+                                                Немає.
+                                            </td>
+                                            <td th:text="${task.name}">
+                                                Завдання
+                                            </td>
+                                            <td th:text="${task.description}">
+                                                Опис
+                                            </td>
+                                            <td th:text="${task.project.name}">
+                                                Демонструвати
+                                            </td>
+                                            <td th:text="${task.doer.name}">
+                                                Виконавець
+                                            </td>
+                                            <td th:text="${#dates.format(task.startDate,'dd/MM/yyyy')}">
+                                                Дата початку
+                                            </td>
+                                            <td th:text="${#dates.format(task.endDate,'dd/MM/yyyy')}">
+                                                Дата закінчення
+                                            </td>
+                                            <td th:text="${task.status.name}">
+                                                Статус
+                                            </td>
+                                            <td>
+                                                <a th:href="@{/task/edit(id=${task.id})}"
+                                                    class="btn btn-sm btn-primary">
+                                                    Виправити
+                                                </a>
+                                                <a th:href="@{/task/delete(id=${task.id})}"
+                                                    class="btn btn-sm btn-danger">
+                                                    Стерти
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div th:replace="fragments/footer :: footer"></div>
+        </div>
+    </div>
+    <!-- jQuery JS -->
+    <script src="/css/colors/js/jquery.min.js"></script>
+    <!-- Bootstrap Core JS -->
+    <script src="/css/colors/js/bootstrap.min.js"></script>
+    <script src="/css/colors/js/jquery.dataTables.js"></script>
+    <!-- Custom Theme JS -->
+    <script src="/css/colors/js/custom.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+    <!-- Toastify JS -->
+    <script th:inline="javascript">
+        var flag = /*[[${flag}]]*/ false;
+        var msg = /*[[${msg}]]*/ null;
+        if (flag) {
+            Toastify({ text: msg, position: "center" }).showToast();
+        }
+    </script>
+    <!-- Link icon to button search -->
+    <script>
+        $(function () {
+            $("#search-link").on('click', function (e) {
+                e.preventDefault();
+                $("#search:hidden").trigger('click');
+            });
+        });
+    </script>
+</body>
+
+</html>
