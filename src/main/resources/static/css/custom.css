@@ -15,14 +15,14 @@
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
     color: #fff !important;
-    border: 1px solid #13dafe;
-    background-color: #13dafe;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #13dafe));
-    background: -webkit-linear-gradient(top, #13dafe 0%, #13dafe 100%);
-    background: -moz-linear-gradient(top, #13dafe 0%, #13dafe 100%);
-    background: -ms-linear-gradient(top, #13dafe 0%, #13dafe 100%);
-    background: -o-linear-gradient(top, #13dafe 0%, #13dafe 100%);
-    background: linear-gradient(to bottom, #13dafe 0%, #13dafe 100%);
+    border: 1px solid #b85ffa;
+    background-color: #b85ffa;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #b85ffa));
+    background: -webkit-linear-gradient(top, #b85ffa 0%, #b85ffa 100%);
+    background: -moz-linear-gradient(top, #b85ffa 0%, #b85ffa 100%);
+    background: -ms-linear-gradient(top, #b85ffa 0%, #b85ffa 100%);
+    background: -o-linear-gradient(top, #b85ffa 0%, #b85ffa 100%);
+    background: linear-gradient(to bottom, #b85ffa 0%, #b85ffa 100%);
 }
 .table.dataTable thead .sorting:after,
 .table.dataTable thead .sorting_asc:after{
