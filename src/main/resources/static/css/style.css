@@ -126,9 +126,10 @@ b {
 .footer {
   background: #d5a2fa !important;
   color:#0F0F0F !important;
-  font-size:14px;
+  font-size:15px;
   font-weight:400;
    }
+
   .footer__inner {
     margin-top: -12px;
     display: -webkit-box;
