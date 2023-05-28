@@ -31,19 +31,7 @@ public class ApplicationController {
     @Autowired
     private AuthenticationUtil authenticationUtil;
 
-    // Перевірте логін
-    @GetMapping(LOGIN_VIEW)
-    public ModelAndView login(boolean error) {
-        // перевірити поточний рахунок ще дійсний
-        if (authenticationUtil.getAccount() == null) {
-            var mav = new ModelAndView(LOGIN_TEMP);
-            // помилка логіну
 
-            return mav;
-        } else {
-            return new ModelAndView(REDIRECT_PREFIX + INDEX_VIEW);
-        }
-    }
 
     // Завантажити приладову панель
     @GetMapping(value = { INDEX_VIEW, "/", "" })
@@ -70,37 +58,9 @@ public class ApplicationController {
         }
     }
 
-    // Пошук користувача
-    @GetMapping(SEARCH_VIEW)
-    public String search(String name) {
-        // перевірити поточний рахунок ще дійсний
-        if (authenticationUtil.getAccount() == null) {
-            return REDIRECT_PREFIX + LOGOUT_VIEW;
-        } else {
-            var users = userService.getUsers(name);
-            // відповідати користувачеві
-            if (users.size() > 0) {
-                return REDIRECT_PREFIX + USER_VIEW + DETAILS_VIEW + "?id=" + users.get(0).getId();
-            } else {
-                return REDIRECT_PREFIX + BLANK_VIEW;
-            }
-        }
-    }
 
 
-    //Завантажити порожню сторінку
-    @GetMapping(BLANK_VIEW)
-    public ModelAndView blank() {
-        var account = authenticationUtil.getAccount();
-        // перевірити поточний рахунок ще дійсний
-        if (account == null) {
-            return new ModelAndView(REDIRECT_PREFIX + LOGOUT_VIEW);
-        } else {
-            var mav = new ModelAndView(BLANK_TEMP);
-            mav.addObject(ACCOUNT_PARAM, account);
-            return mav;
-        }
-    }
+
 
     // Завантажити заборонену сторінку
     @GetMapping(FORBIDDEN_VIEW)

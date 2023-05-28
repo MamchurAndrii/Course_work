@@ -1697,7 +1697,7 @@ mark {
 }
 
 .text-primary {
-  color: #337ab7
+  color: #95fc03 !important
 }
 
 a.text-primary:focus,
@@ -1733,7 +1733,7 @@ a.text-warning:hover {
 }
 
 .text-danger {
-  color: #a94442
+  color: #a94442 !important
 }
 
 a.text-danger:focus,
@@ -3702,11 +3702,11 @@ textarea.input-lg {
 .has-error.checkbox-inline label,
 .has-error.radio label,
 .has-error.radio-inline label {
-  color: #a94442
+  color: #a94442 !important
 }
 
 .has-error .form-control {
-  border-color: #a94442;
+  border-color: #a94442 !important;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
 }
@@ -3718,13 +3718,13 @@ textarea.input-lg {
 }
 
 .has-error .input-group-addon {
-  color: #a94442;
+  color: #a94442 !important;
   background-color: #f2dede;
-  border-color: #a94442
+  border-color: #a94442 !important
 }
 
 .has-error .form-control-feedback {
-  color: #a94442
+  color: #a94442 !important
 }
 
 .has-feedback label~.form-control-feedback {
@@ -6348,7 +6348,7 @@ a.thumbnail:hover {
 }
 
 .alert-danger {
-  color: #a94442;
+  color: #a94442 !important;
   background-color: #f2dede;
   border-color: #ebccd1
 }
@@ -6409,14 +6409,16 @@ a.thumbnail:hover {
   line-height: 20px;
   color: #fff;
   text-align: center;
-  background-color: #337ab7;
+
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
   -webkit-transition: width .6s ease;
   -o-transition: width .6s ease;
   transition: width .6s ease
 }
-
+.progress-bar-primary{
+ background-color: #95fc03 !important;
+}
 .progress-bar-striped,
 .progress-striped .progress-bar {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
@@ -6464,7 +6466,7 @@ a.thumbnail:hover {
 }
 
 .progress-bar-danger {
-  background-color: #d9534f
+  background-color: #a94442 !important;
 }
 
 .progress-striped .progress-bar-danger {
@@ -6735,13 +6737,13 @@ button.list-group-item-warning.active:hover {
 }
 
 .list-group-item-danger {
-  color: #a94442;
+  color: #a94442 !important;
   background-color: #f2dede
 }
 
 a.list-group-item-danger,
 button.list-group-item-danger {
-  color: #a94442
+  color: #a94442 !important
 }
 
 a.list-group-item-danger .list-group-item-heading,
@@ -6753,7 +6755,7 @@ a.list-group-item-danger:focus,
 a.list-group-item-danger:hover,
 button.list-group-item-danger:focus,
 button.list-group-item-danger:hover {
-  color: #a94442;
+  color: #a94442 !important;
   background-color: #ebcccc
 }
 
@@ -6764,8 +6766,8 @@ button.list-group-item-danger.active,
 button.list-group-item-danger.active:focus,
 button.list-group-item-danger.active:hover {
   color: #fff;
-  background-color: #a94442;
-  border-color: #a94442
+  background-color: #a94442 !important;
+  border-color: #a94442 !important
 }
 
 .list-group-item-heading {
@@ -7172,7 +7174,7 @@ button.list-group-item-danger.active:hover {
 }
 
 .panel-danger>.panel-heading {
-  color: #a94442;
+  color: #a94442 !important;
   background-color: #f2dede;
   border-color: #ebccd1
 }
@@ -7183,7 +7185,7 @@ button.list-group-item-danger.active:hover {
 
 .panel-danger>.panel-heading .badge {
   color: #f2dede;
-  background-color: #a94442
+  background-color: #a94442 !important
 }
 
 .panel-danger>.panel-footer+.panel-collapse>.panel-body {

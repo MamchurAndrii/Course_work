@@ -53,9 +53,9 @@
                                     </label>
                                     <div class="col-md-12">
                                         <select name="projectId" class="form-control form-control-line">
-                                            <option value="HRM_220101">HRM_220101</option>
-                                            <option value="CRM_220101">CRM_220101</option>
-                                            <option value="Jira_220701">Jira_220701</option>
+                                            <option th:each="project : ${projects}" th:value="${project.id}"
+                                                    th:text="${project.name}" th:selected="${project.id}==0">
+                                            </option>
                                         </select>
                                     </div>
 

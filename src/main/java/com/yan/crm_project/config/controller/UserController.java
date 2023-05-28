@@ -27,8 +27,7 @@ public class UserController {
     @Autowired
     private RoleService roleService;
 
-    @Autowired
-    private FileUploadService fileUploadService;
+
 
     @Autowired
     private ApplicationUtil applicationUtil;
@@ -154,8 +153,7 @@ public class UserController {
                     //У цьому обліковому записі є робота, не можна видалити!
                 } else {
                     userService.deleteUser(id);
-                    fileUploadService.remove(id + ".jpg");
-                    //Акаунт видалено!
+
                 }
             }
             return REDIRECT_PREFIX + USER_VIEW;

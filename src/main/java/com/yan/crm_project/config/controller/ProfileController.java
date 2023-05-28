@@ -31,11 +31,6 @@ public class ProfileController {
     @Autowired
     private TaskStatusService taskStatusService;
 
-    @Autowired
-    private FileUploadService fileUploadService;
-
-    @Autowired
-    private ImageService imageService;
 
     @Autowired
     private ApplicationUtil applicationUtil;
@@ -65,38 +60,7 @@ public class ProfileController {
         }
     }
 
-    // Завантажте новий аватар
-    @PostMapping(EDIT_VIEW + AVATAR_VIEW)
-    public String profileAvatarEdit(MultipartFile avatar) {
-        var account = authenticationUtil.getAccount();
-        // перевірити поточний рахунок ще дійсний
-        if (account == null) {
-            return REDIRECT_PREFIX + LOGOUT_VIEW;
-        } else {
-            if (avatar.isEmpty()) {
-                //Невідомий файл!
-            } else {
-                fileUploadService.init();
-                var file = fileUploadService.upload(avatar);
-                // перевірте файл зображення
-                if (file == null) {
-                    //Недійсний файл!
-                } else {
-                    var defaultAvatarName = account.getId() + ".jpg";
-                    // спробуйте змінити аватар
-                    if (!imageService.resizeImage(file, defaultAvatarName)) {
-                        //Не вдалося оновити аватар!
-                    } else {
-                        account.setImage(defaultAvatarName);
-                        userService.saveUserWithoutPassword(account);
-                        fileUploadService.remove(file.getName());
-                       //Оновлення фотографії профілю виконано!
-                    }
-                }
-            }
-            return REDIRECT_PREFIX + PROFILE_VIEW;
-        }
-    }
+
 
 
     //Завантажити форму введення редагованої інформації
