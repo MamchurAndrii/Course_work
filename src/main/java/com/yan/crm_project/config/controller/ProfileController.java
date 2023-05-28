@@ -32,6 +32,7 @@ public class ProfileController {
     private TaskStatusService taskStatusService;
 
 
+
     @Autowired
     private ApplicationUtil applicationUtil;
 
@@ -59,7 +60,6 @@ public class ProfileController {
             return mav;
         }
     }
-
 
 
 

@@ -31,7 +31,19 @@ public class ApplicationController {
     @Autowired
     private AuthenticationUtil authenticationUtil;
 
+    // Перевірте логін
+    @GetMapping(LOGIN_VIEW)
+    public ModelAndView login(boolean error) {
+        // перевірити поточний рахунок ще дійсний
+        if (authenticationUtil.getAccount() == null) {
+            var mav = new ModelAndView(LOGIN_TEMP);
+            // помилка логіну
 
+            return mav;
+        } else {
+            return new ModelAndView(REDIRECT_PREFIX + INDEX_VIEW);
+        }
+    }
 
     // Завантажити приладову панель
     @GetMapping(value = { INDEX_VIEW, "/", "" })
@@ -62,9 +74,4 @@ public class ApplicationController {
 
 
 
-    // Завантажити заборонену сторінку
-    @GetMapping(FORBIDDEN_VIEW)
-    public String forbidden() {
-        return FORBIDDEN_TEMP;
-    }
 }
