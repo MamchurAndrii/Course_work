@@ -28,7 +28,7 @@ public class JobController {
     @Autowired
     private AuthenticationUtil authenticationUtil;
 
-    // Завантажити сторінку вакансій
+    // Завантажити сторінку статистика робіт
     @GetMapping("")
     public ModelAndView job() {
         var account = authenticationUtil.getAccount();

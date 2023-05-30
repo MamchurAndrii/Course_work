@@ -39,7 +39,7 @@ public class ProfileController {
     @Autowired
     private AuthenticationUtil authenticationUtil;
 
-    // Завантажити сторінку профілю
+    // Завантажити сторінку персональна інформація
     @GetMapping("")
     public ModelAndView profile() {
         var account = authenticationUtil.getAccount();
@@ -77,7 +77,7 @@ public class ProfileController {
         }
     }
 
-    // Редагувати користувача
+    // Зберегти редагованого користувача
     @RequestMapping(value = EDIT_VIEW + INFO_VIEW + SAVE_VIEW, method = { GET, PUT })
     public String profileInfoEditSave(User user) {
         var account = authenticationUtil.getAccount();
@@ -97,7 +97,7 @@ public class ProfileController {
     }
 
 
-    //Завантажити форму введення завдання редагування
+    //Завантажити форму введення редагування завданння
     @GetMapping(EDIT_VIEW + TASK_VIEW)
     public ModelAndView profileTaskEdit(int id) {
         var account = authenticationUtil.getAccount();
@@ -120,7 +120,7 @@ public class ProfileController {
         }
     }
 
-    // Редагувати завдання
+    // Зберегти редаговане завдання
     @RequestMapping(value = EDIT_VIEW + TASK_VIEW + SAVE_VIEW, method = { GET, PUT })
     public String profileTaskEditSave(Task task) {
         // перевірити поточний рахунок ще дійсний

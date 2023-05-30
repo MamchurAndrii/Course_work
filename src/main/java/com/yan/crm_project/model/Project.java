@@ -25,19 +25,6 @@ public class Project {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "description")
-    private String description;
-
-    @NonNull
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "start_data")
-    private Date startDate;
-
-    @NonNull
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "end_data")
-    private Date endDate;
-
     @Column(name = "id_employee_who_will_perform")
     private int originatorId;
 

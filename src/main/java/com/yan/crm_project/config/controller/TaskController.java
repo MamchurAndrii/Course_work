@@ -87,7 +87,7 @@ public class TaskController {
         }
     }
 
-    // Завантажити форму введення завдання редагування
+    // Завантажити форму редагування
     @GetMapping(EDIT_VIEW)
     public ModelAndView taskEdit(int id) {
         var account = authenticationUtil.getAccount();
@@ -116,7 +116,7 @@ public class TaskController {
         }
     }
 
-    // Редагувати завдання
+    // Зберегти редаговане завдання
     @RequestMapping(value = EDIT_VIEW + SAVE_VIEW, method = { GET, PUT })
     public String taskEditSave(Task task, int originatorId) {
         var account = authenticationUtil.getAccount();

@@ -14,7 +14,7 @@ public class AuthenticationUtil {
     @Autowired
     private UserService userService;
 
-    //Отримати поточний обліковий запис користувача з SecurityContextHolder
+    //Отримати поточний обліковий запис користувача
     public User getAccount() {
         var authentication = getContext().getAuthentication();
         return authentication instanceof AnonymousAuthenticationToken ? null

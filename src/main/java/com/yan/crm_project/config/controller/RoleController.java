@@ -26,7 +26,7 @@ public class RoleController {
     @Autowired
     private AuthenticationUtil authenticationUtil;
 
-    // Завантажити список ролей
+    // Завантажити список всіх ролей
     @GetMapping("")
     public ModelAndView role() {
         var account = authenticationUtil.getAccount();
@@ -55,7 +55,7 @@ public class RoleController {
         }
     }
 
-    // Додайте нові ролі
+    // Зберегти нову роль
     @PostMapping(ADD_VIEW + SAVE_VIEW)
     public String roleAddSave(Role role) {
         // Перевірте поточний рахунок ще дійсний
@@ -96,7 +96,7 @@ public class RoleController {
         }
     }
 
-    // Редагувати ролі
+    // Зберегти редагувану роль
     @RequestMapping(value = EDIT_VIEW + SAVE_VIEW, method = { GET, PUT })
     public String roleEditSave(Role role) {
         // перевірити поточний рахунок ще дійсний

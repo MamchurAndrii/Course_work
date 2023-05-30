@@ -45,6 +45,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         }
     }
 
+    //Отримати всіх працівників
     @Override
     public Iterable<User> getUsers() {
         log.info("Отримання всіх користувачів");

@@ -31,7 +31,7 @@ public class ApplicationController {
     @Autowired
     private AuthenticationUtil authenticationUtil;
 
-    // Перевірте логін
+    // Завантажити сторінку автентифікації
     @GetMapping(LOGIN_VIEW)
     public ModelAndView login(boolean error) {
         // перевірити поточний рахунок ще дійсний
@@ -45,7 +45,7 @@ public class ApplicationController {
         }
     }
 
-    // Завантажити приладову панель
+    // Завантажити сторінку головна
     @GetMapping(value = { INDEX_VIEW, "/", "" })
     public ModelAndView index() {
         var account = authenticationUtil.getAccount();

@@ -19,30 +19,25 @@ public class RoleServiceImpl implements RoleService {
     @Autowired
     private RoleRepository roleRepository;
 
-
-
+    //Отримати всі можливі ролі в базі даних
     @Override
     public Iterable<Role> getRoles() {
         log.info("Отримання всіх ролей");
         return roleRepository.findAll();
     }
-
     @Override
     public Role getRole(int id) {
         log.info("Отримання ролі з ідентифікатором {}", id);
         return roleRepository.findById(id).orElse(null);
     }
-
     @Override
     public Role getRole(String name) {
-
         log.info("Отримання ролі з іменем: {}", name);
         return roleRepository.findByName(name);
     }
 
     @Override
     public Role saveRole(Role role) {
-
         log.info("Збереження ролі з іменем: {}", role.getName());
         return roleRepository.save(role);
     }

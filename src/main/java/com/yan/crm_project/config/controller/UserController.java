@@ -50,7 +50,7 @@ public class UserController {
         }
     }
 
-    // Завантажити нову форму введення користувача
+    // Завантажити нову форму введення нового користувача
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(ADD_VIEW)
     public ModelAndView userAdd() {
@@ -88,7 +88,7 @@ public class UserController {
         }
     }
 
-    // Завантажити редагувати форму введення користувача
+    // Завантажити форму для редагування користувача
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(EDIT_VIEW)
     public ModelAndView userEdit(int id) {
@@ -113,7 +113,7 @@ public class UserController {
         }
     }
 
-    // Редагувати користувача
+    // Зберігти редагованого користувача
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(EDIT_VIEW + SAVE_VIEW)
     public String userEditSave(User user) {
@@ -189,7 +189,8 @@ public class UserController {
                         tasksCount == 0 ? 0 : tasksNotStarted.size() * 100 / tasksCount);
                 mav.addObject(IN_PROGRESS_PERCENT_PARAM,
                         tasksCount == 0 ? 0 : tasksInProgress.size() * 100 / tasksCount);
-                mav.addObject(COMPLETED_PERCENT_PARAM, tasksCount == 0 ? 0 : tasksCompleted.size() * 100 / tasksCount);
+                mav.addObject(COMPLETED_PERCENT_PARAM,
+                        tasksCount == 0 ? 0 : tasksCompleted.size() * 100 / tasksCount);
                 return mav;
             }
         }

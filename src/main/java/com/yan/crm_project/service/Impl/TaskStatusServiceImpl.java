@@ -17,7 +17,7 @@ import lombok.extern.slf4j.*;
 public class TaskStatusServiceImpl implements TaskStatusService {
     @Autowired
     private TaskStatusRepository taskStatusRepository;
-
+    //Отримати статус всіх завдань
     @Override
     public Iterable<TaskStatus> getTaskStatuses() {
         log.info("Отримання всіх статусів завдань");

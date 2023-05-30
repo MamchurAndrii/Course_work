@@ -5,7 +5,7 @@ public class ViewConstant {
     public static final String LOGOUT_VIEW = "/logout";
     public static final String INDEX_VIEW = "/index";
     public static final String FORBIDDEN_VIEW = "/403";
-    public static final String NOT_FOUND_VIEW = "/404";
+
     public static final String BLANK_VIEW = "/blank";
     public static final String API_VIEW = "/api";
     public static final String FREE_VIEW = "/**";
@@ -30,9 +30,9 @@ public class ViewConstant {
 
     public static final String DETAILS_VIEW = "/details";
 
-    public static final String AVATAR_VIEW = "/avatar";
+
 
     public static final String REFRESH_VIEW = "/refresh";
 
-    public static final String SEARCH_VIEW = "/search";
+
 }

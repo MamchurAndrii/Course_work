@@ -21,7 +21,7 @@ public class TaskServiceImpl implements TaskService {
     @Autowired
     private TaskRepository taskRepository;
 
-
+    //Отримати всі завдання які є в базі даних
     @Override
     public List<Task> getTasks() {
         log.info("Отримання всіх завдань");
